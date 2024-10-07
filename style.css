@@ -411,7 +411,7 @@ body {
 
 
 
-       /* General Styles */
+/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #13101a;
@@ -430,6 +430,7 @@ body {
     color: #f8d210;
     text-align: center;
     margin-bottom: 40px;
+    padding-top: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -445,16 +446,72 @@ body {
     color: #fff;
     padding: 10px 20px;
     border: none;
-    margin: 0 5px;
+    margin: 0 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 5px;
 }
 
 .filter-btn:hover, .filter-btn.active {
     background-color: #020224;
-
+    transform: scale(1.05);
+    border: 1px solid #ffcc00; /* Change border color on hover/active */
+    box-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00; /* Glow effect */
 }
 
+/* MEDIA QUERY FOR MOBILE DEVICES (up to 768px) */
+@media (max-width: 768px) {
+
+    /* Adjust section title for smaller screens */
+    .section-title {
+        font-size: 1.8rem; /* Smaller font size for mobile */
+        margin-bottom: 20px;
+        padding-top: 10px;
+    }
+
+    /* Make buttons more compact on mobile */
+    .filter-btn {
+        padding: 8px 15px; /* Smaller padding for mobile */
+        margin: 5px 5px;   /* Smaller margin for mobile */
+        font-size: 0.9rem; /* Slightly smaller text size */
+    }
+
+    /* Stack buttons vertically on small screens */
+    .portfolio-filters {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Reduce container padding */
+    .container {
+        padding: 10px;
+    }
+}
+
+/* MEDIA QUERY FOR EXTRA SMALL DEVICES (up to 480px) */
+@media (max-width: 480px) {
+
+    /* Further reduce the title size */
+    .section-title {
+        font-size: 1.5rem; /* Even smaller for very small screens */
+    }
+
+    /* Stack buttons vertically with full width */
+    .filter-btn {
+        width: 100%;        /* Full width buttons */
+        margin: 5px 0;      /* Stack buttons with smaller spacing */
+    }
+
+    /* Reduce text and padding sizes for readability */
+    body {
+        font-size: 0.9rem;  /* Smaller text on very small screens */
+    }
+
+    .container {
+        padding: 5px;
+    }
+}
 
 
 
